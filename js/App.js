@@ -151,12 +151,12 @@ function GetWord(word, searchT){
         // fetch words and populate table
         tableBody.innerHTML = "";
         console.log("sending search type " + searchT);
-        fetch(`http://127.0.0.1:8877/php/get_word.php?name=${word}&&searchtype=${searchT}`)
+        fetch(`http://127.0.0.1:8877/php/get_word.php?name=${word}&searchtype=${searchT}`)
         .then(response => response.text())
         .then(html => {
         document.getElementById('TableBody').innerHTML = html;
         let qs = document.getElementsByClassName("bare");
-        console.log(typeof(qs));
+        console.log(qs);
         Object.values(qs).forEach((element)=>{
             element.addEventListener("click", ()=>{
                 console.log(element.textContent);

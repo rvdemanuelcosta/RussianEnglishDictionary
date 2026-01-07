@@ -1,8 +1,10 @@
 <?php
+$searchType = $_GET['searchtype'] ?? '';
+$name = $_GET['name'] ?? '';
 try {
-    $db = new PDO('sqlite:' . __DIR__ . '../dictionary.db');
-    $name = $_GET['name'] ?? '';
-    $searchType = $_GET['searchtype'] ?? '';
+    $db = new PDO('sqlite:' . __DIR__ . '/dictionary.db');
+    
+    
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Get Adjectives
     if($name != null && $name != ""){
