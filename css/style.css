@@ -1,0 +1,441 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+html{
+    zoom: 100%;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top:0;
+    background-image: linear-gradient(white, white 33.3%, blue 33.3%,
+    blue 66.6%, red 66.6%, red 100%);
+    height: 128px;
+    padding-left: 32px;
+    border: 2px solid black;
+}
+.WordTipesContainer{
+    color: white;
+    margin-top: 16px;
+}
+.SearchBar{
+    display: flex;
+    justify-content: start;
+    margin-top: 16px;
+    align-items: end;
+    height: 32px;
+}
+.WordInputField{
+    width: 300px;
+    height: 24px;
+    margin: 0 8px;
+    padding-left: 16px;
+    box-shadow: 0px 0px 10px 2px black;
+    align-self: center;
+}
+.font1_3rem{
+    font-size: 1.3rem;
+}
+.SearchWordLabel{
+    
+}
+main{
+    width: 100vw;
+    background-color: white;
+    padding: 16px;
+    
+}
+h1{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+}
+tr{
+    border: 1px solid black;
+    text-align: center;
+}
+td{
+    border: 1px solid transparent;
+    margin: auto;
+    padding-left: 8px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+#UserMessageContainer{
+    display: block;
+    position: absolute;
+    top: calc(100% - 148px);
+    width: 300px;
+    height: 96px;
+    background-color: rgb(255, 194, 194);
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 16px;
+}
+
+.showAlert{
+    animation: showalert;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+.hideAlert{
+    animation: hidealert;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes showalert{
+    0%{
+        top: calc(100% - 148px);
+        left: calc(0% - 300px);
+    }
+    100%{
+        top: calc(100% - 148px);
+        left: calc(0% + 16px);
+    }
+}
+@keyframes hidealert{
+    
+    0%{
+        top: calc(100% - 148px);
+        left: calc(0% + 16px);
+    }
+    100%{
+        top: calc(100% - 148px);
+        left: calc(0% - 300px);
+    }
+}
+
+.hidden{
+    display: none !important;
+}
+.inline{
+    display: inline !important;
+}
+.bold{
+    font-weight: bold;
+}
+.WordTranslation{
+    color: white;
+}
+.lightbox{
+    background-color: rgba(0, 0, 0, 0.863);
+    border: 1px solid black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.WordInfo{
+    width: 90%;
+    height: 50%;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 16px;
+    overflow: hidden;
+    flex-direction: column;
+}
+.AskAI{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    justify-items: start;
+    margin-left: 32px;
+    overflow: scroll;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+.loadingAiResponse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-weight: bold;
+}
+.SpiningAnimation{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    animation: loading;
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-delay: 0ms;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+@keyframes loading{
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+.loadingCircle1{
+    background-color: red;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    position: absolute;
+    left: 16px;
+    top: 0;
+}
+.loadingCircle2{
+    background-color: red;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    left: 32px;
+    top: 9px;
+}
+.loadingCircle3{
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 18px;
+    top: 38px;
+}
+.loadingCircle4{
+    background-color: red;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 6px;
+    top: 32px;
+    
+}
+.loadingCircle5{
+    background-color: red;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    position: absolute;
+    left: 32px;
+    top: 29px;
+}
+
+.WordInfoWindowHeader{
+    height: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.WordInfoData{
+    margin-bottom: 32px;
+}
+.bare{
+    color: black;
+}
+.bare:hover{
+    transition: 500ms;
+    background-color: rgb(35, 86, 255);
+    color: white;
+    cursor: pointer;
+}
+.close-bt{
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255, 93, 93);
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+}
+.close-bt:hover{
+    cursor: pointer;
+}
+.round{
+    border-radius: 50%;
+}
+.word{
+    
+}
+h2#WordName{
+    color: black;
+    font-size: 3rem;
+}
+.blue{
+    color: blue;
+}
+.red{
+    color: red;
+}
+.white{
+    color: white;
+}
+
+#AskAIButton{
+    background-color: rgb(255, 103, 103);
+    width: 100px;
+    height: 24px;
+    border-radius: 16px;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+#AskAIButton:hover{
+    cursor: pointer;
+}
+
+.SettingsLightbox{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.SettingsContainer{
+    height: 50%;
+    margin-bottom: 16px;
+    width: 100%;
+    padding: 8px;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+}
+.SettingsContainer h2{
+    font-size: 2rem !important;
+}
+.FlexColumn{
+    display: flex;
+    flex-direction: column;
+}
+.FlexRow{
+    display: flex;
+    flex-direction: row;
+}
+.SettingsButtonsGrounp{
+    height: 32px;
+    justify-content: space-evenly;
+
+}
+.SettingsButtons{
+    background-color: rgb(0, 102, 255);
+    color: white;
+    width: 100px;
+    height: 24px;
+    border-radius: 4px;
+}
+.SettingsButtons:hover{
+    cursor: pointer;
+}
+#ModelDescription{
+    background-color: white;
+    position: fixed;
+    top: var(--mousePositionY);
+    left: var(--mousePositionX);
+    height: 32px;
+    padding-top: 3px;
+    width: fit-content;
+    padding: 3px;
+    border-radius: 8px;
+    min-width: 150px;
+}
+#OpenSettingsButton{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.541);
+    height: 32px;
+    font-size: 1.5rem;
+}
+#OpenSettingsButton:hover{
+    cursor: pointer;
+}
+.Border1px{
+    border: 1px solid black;
+}
+
+@media only screen and (min-width: 315px){
+    .SearchTools{
+        display:flex;
+        flex-direction: column;
+        height:100px;
+        align-items: start;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+        width: 100%;
+        margin-bottom: 16px;
+        transition: 1000ms;
+    }
+    .SearchBar{
+        display:flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        transition: 1000ms;
+    }
+    
+    .SearchWordLabel{
+        width: 100%;
+        margin-bottom: 4px;
+        transition: 1000ms;
+    }
+    .WordInputField{
+        width: 100% !important;
+        margin-bottom: 4px;
+        box-shadow: none;
+        border: 1px solid black;
+        transition: 1000ms;
+    }
+    .SearchTypeLabel{
+        width: 100%;
+        margin-bottom: 4px;
+        transition: 1000ms;
+    }
+    #SearchType{
+        width: 100%;
+        border: 1px solid black;
+        transition: 1000ms;
+    }
+    .WordInfo{
+        height: 90%;
+        transition: 1000ms;
+    }
+}
+@media only screen and (min-width: 1020px){
+    .WordInputField{
+        width: 400px !important;
+        display: block;
+        margin-right: auto;
+        margin-left: 0;
+    }
+    #SearchType{
+        width: 100px;
+        display:block;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/App.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="MainHeader">Русский Dictionary</h1>
+        <input type="button" id="OpenSettingsButton" value="⚌">
+    </header>
+    <main>
+        <!-- Search related elements -->
+        <div class="SearchTools">
+            <div class="SearchBar">
+            
+                <label id="UserInputLabel" for="WordSearchField" class="SearchWordLabel font1_3rem bold">Search Word: </label>
+                <input type="text" id="WordSearchField" class="WordInputField">
+                <label for="SearchType" class="SearchTypeLabel inline bold font1_3rem">Search type: </label>
+            <select id="SearchType">
+                <option value="Contains">Contains</option>
+                <option value="Exact" selected>Exact</option>
+            </select>  
+            </div>
+            
+        </div>
+        
+        <!--Search output  -->
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Assendant</td>
+                </tr>
+            </thead>
+            <tbody id="TableBody">
+                <tr>
+                    <td>молоко</td>
+                    <td>молоко'</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="WordInfoWindow" class="lightbox hidden">
+            <div class="WordInfoWindowHeader">
+                    <input id="WordInfoWindowCloseBt" class="round close-bt" type="button" value="X">
+            </div>
+            <div class="WordInfo">
+                <!-- Word, translation and form-->
+                <div class="WordInfoData">
+                    <h2 id="WordName">молоко</h2>
+                    <p>English translation: <span id="en_tl"></span></p>
+                    <p>Word Form: <span id="form_type"></span></p>
+                </div>
+                <!-- AI output-->
+                <div class="AskAI">
+                    <p id="AIOutput"></p>
+                    <button id="AskAIButton" class="">Ask AI</button>
+                    <div class="loadingAiResponse hidden" id="loadingSpin">
+                        <h2>Loadig AI response</h2>
+                        <div class="SpiningAnimation">
+                            <div class="loadingCircle1"></div>
+                            <div class="loadingCircle2"></div>
+                            <div class="loadingCircle3"></div>
+                            <div class="loadingCircle4"></div>
+                            <div class="loadingCircle5"></div>
+                        </div>
+                        
+                    </div>
+                </div>   
+            </div>
+                     
+        </div>
+
+        <!-- User warning message-->
+        <div class="hidden" id="UserMessageContainer">
+            <h2>Alert:</h2>
+            <p id="UserAlertMessage">At least 1 character required to search on the database.</p>
+        </div>
+
+        <!-- App settings-->
+        <div id="SettingsWindow" class="SettingsLightbox hidden">
+            <div class="SettingsContainer FlexColumn">
+                <h2>Settings</h2>
+                <p>Model: 
+                    <select id="SettingsAIModelSelect" class="Border1px">
+                        <option value="1B">1B Model</option>
+                        <option value="8B">8B Model</option>
+                    </select><span id="ModelDescription" class="hidden">Model description</span>
+            </p>
+            <p>Language: 
+                <select id="SettingsDisplayLanguageSelect" class="Border1px">
+                    <option value="English">English</option>
+                    <option value="Русский">Русский</option>
+                </select>
+            </p>
+            </div>
+            <div class="FlexRow SettingsButtonsGrounp">
+                <button id="SettingsCancelButton" class="SettingsButtons" value="Cancel">Cancel</button>
+                <button id="SettingsSaveButton" class="SettingsButtons" value="Save">Save</button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
