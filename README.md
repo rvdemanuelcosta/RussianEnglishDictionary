@@ -17,3 +17,7 @@
    
 3. **Configure PHP:**
    - Ensure your `get_translations.php` and `get_word.php` points to the correct database filename.
+
+4. **AI feature:**
+   - Install ollama from [Ollama Download page](https://ollama.com/download).
+   - Download required models llama3.2:1b and llama3:latest.

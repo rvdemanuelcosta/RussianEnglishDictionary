@@ -156,7 +156,7 @@ function GetWord(word, searchT){
         .then(html => {
         document.getElementById('TableBody').innerHTML = html;
         let qs = document.getElementsByClassName("bare");
-        console.log(qs);
+        //console.log(qs);
         Object.values(qs).forEach((element)=>{
             element.addEventListener("click", ()=>{
                 console.log(element.textContent);
@@ -173,7 +173,7 @@ function GetWord(word, searchT){
         });
     })
         .catch(error => console.error('Error:', error));
-        console.log(QueryTimout);
+       // console.log(QueryTimout);
     }
     else{
         // Show some hints to the user
